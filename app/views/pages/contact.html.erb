@@ -1,0 +1,20 @@
+<h1>Contact Page</h1>
+
+<!-- Data should ocme from the controller -->
+<%# members = ["Doug", "Noemi", "Sasha", "Sylvain", "Scooter"] %>
+
+<h2>Meet our team</h2>
+
+<form action="/contact" method="get">
+  <input type="text" placeholder="who are you looking for?" name="member" value="<%= params[:member] %>">
+  <input type="submit">
+</form>
+
+<ul>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ul>
+
+
+<%= link_to "About", about_path %>
